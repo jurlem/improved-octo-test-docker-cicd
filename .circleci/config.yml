@@ -1,0 +1,32 @@
+version: 2.1
+jobs:
+  lint:
+    docker:
+      - image: circleci/node:14.15.5
+    steps:
+      - checkout
+      - setup_remote_docker:
+         version: 19.03.13
+      - run:
+         name: Nodejs version
+         command: node --version
+      - run:
+         name: Installing dependencies
+         command: yarn install
+      - run:
+         name: Installing dependencies
+         command: yarn start
+      - run:
+         name: Build docker image
+         command: docker build -t jurlem/test .
+      - run:
+         name: Push docker image
+         command: docker push jurlem/test
+              echo "Pushed production image to docker hub"
+
+
+workflows:
+ version: 2
+ test:
+    jobs:
+      - lint
