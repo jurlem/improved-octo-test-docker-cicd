@@ -18,7 +18,7 @@ jobs:
          command: docker build -t jurlem/test .
       - run:
          name: Push docker image
-         command: docker push jurlem/test
+         command: docker push jurlem/test:latest
               echo "Pushed production image to docker hub"
 
 
