@@ -18,7 +18,7 @@ jobs:
          command: docker build -t jurlem/test .
       - run:
          name: Push docker image
-         command:  docker run -dp 3000:3000 jurlem/fastfeedback
+         command:  docker run -dp 3000:3000 jurlem/test
               echo "Docker run"
       - run:
          name: Push docker image
