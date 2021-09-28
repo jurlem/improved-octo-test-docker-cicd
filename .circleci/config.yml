@@ -14,8 +14,8 @@ jobs:
          name: Installing dependencies
          command: yarn install
       - run:
-         name: Installing dependencies
-         command: yarn start
+         name: Lint checks
+         command: yarn run lint
       - run:
          name: Build docker image
          command: docker build -t jurlem/test .
