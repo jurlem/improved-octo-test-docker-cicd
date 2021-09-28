@@ -22,7 +22,7 @@ jobs:
               echo "Docker run"
       - run:
          name: Push docker image
-         command: docker push jurlem/test:latest
+         command: docker push jurlem/test
               echo "Pushed production image to docker hub"
 
 
